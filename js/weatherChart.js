@@ -38,9 +38,7 @@ function makeAjaxRequest(endpoint, success) {
   // Your code goes here
   $.ajax({
     url: endpoint,
-    datatype: 'jsonp',
-    success: function(result) {
-      success(result);
-    }
+    dataType: 'jsonp',
+    success: success
   });
 }
