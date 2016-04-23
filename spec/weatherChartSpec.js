@@ -43,7 +43,7 @@ describe("WeatherChart", function(){
       onSuccess = jasmine.createSpy('onSuccess');
 
       makeAjaxRequest("http://example.com", onSuccess)
-      expect($.ajax).toHaveBeenCalledWith({url: 'http://example.com', dataType: 'jsonp', success: onSuccess})
+      expect($.ajax).toHaveBeenCalledWith( {url: 'http://example.com', dataType: 'jsonp', success: onSuccess})
     })
   })
 })
