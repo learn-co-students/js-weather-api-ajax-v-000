@@ -11,5 +11,5 @@ function generateDataSet(labels, data) {
 }
 
 function makeAjaxRequest(endpoint, success) {
-  // Your code goes here
+  $.get"
 }
