@@ -1,7 +1,9 @@
+
 function getFarenheits(result){
   // debugger;
   // Your code goes here
-  var tempArray = $.map(result, function(temp, index) {
+  
+  var tempArray = $.map(result["hourly_forecast"], function(temp, index) {
     return temp.temp.english
   })
   return tempArray
@@ -9,7 +11,7 @@ function getFarenheits(result){
 
 function getHours(result){
   // Your code goes here
-  var hoursArray = $.map(result, function(hour, index) {
+  var hoursArray = $.map(result["hourly_forecast"], function(hour, index) {
     return hour.FCTTIME.hour 
   })
   return hoursArray
@@ -17,23 +19,30 @@ function getHours(result){
 
 function generateDataSet(labels, data) {
   // Your code goes here
-  var data = {
+  var dataSet = {
     labels: labels,
     datasets: [
         {
-            label: "NYC hourly forecast",
-            fillColor: 'rgba(220,220,220,0.5)',
-            strokeColor: 'rgba(220,220,220,0.8)',
-            highlightFill: 'rgba(220,220,220,0.75)',
-            highlightStroke: 'rgba(220,220,220,1)',
-            data: data,
+          label: "Hourly Weather for New York",
+          fillColor: "rgba(220,220,220,0.2)",
+          strokeColor: "rgba(220,220,220,1)",
+          pointColor: "rgba(220,220,220,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          data: data,
         }
       ]
     }
-  return data  
+  return dataSet  
 };
 
 
 function makeAjaxRequest(endpoint, success) {
-  $.get(endpoint, success)
+  $.ajax({
+    url: endpoint, 
+    // contentType: 'application/json',
+    dataType: 'jsonp', 
+    success: success, 
+  })
 }
