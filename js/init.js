@@ -4,7 +4,6 @@ jQuery(document).ready(function($) {
   var ctx = $("#NYCWeatherChart").get(0).getContext("2d");
 
   makeAjaxRequest(URL, function(json) {
-    // var parsedJson = json["hourly_forecast"]
     var data = generateDataSet(getHours(json), getFarenheits(json));
     var tempChart = new Chart(ctx).Line(data, { bezierCurve: true})
   });

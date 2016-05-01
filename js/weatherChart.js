@@ -1,7 +1,5 @@
 
 function getFarenheits(result){
-  // debugger;
-  // Your code goes here
   
   var tempArray = $.map(result["hourly_forecast"], function(temp, index) {
     return temp.temp.english
@@ -10,7 +8,7 @@ function getFarenheits(result){
 }
 
 function getHours(result){
-  // Your code goes here
+
   var hoursArray = $.map(result["hourly_forecast"], function(hour, index) {
     return hour.FCTTIME.hour 
   })
@@ -18,7 +16,7 @@ function getHours(result){
 }
 
 function generateDataSet(labels, data) {
-  // Your code goes here
+
   var dataSet = {
     labels: labels,
     datasets: [
@@ -41,7 +39,6 @@ function generateDataSet(labels, data) {
 function makeAjaxRequest(endpoint, success) {
   $.ajax({
     url: endpoint, 
-    // contentType: 'application/json',
     dataType: 'jsonp', 
     success: success, 
   })
