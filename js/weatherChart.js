@@ -1,15 +1,42 @@
 function getFarenheits(result){
-  // Your code goes here
+  var temp = [];
+
+  $.each(result.hourly_forecast, function(index, forcast) {
+    temp.push(forcast.temp.english);
+  });
+  return temp;
 }
+
 
 function getHours(result){
-  // Your code goes here
+    var hour = [];
+
+  $.each(result.hourly_forecast, function(index, hourly) {
+    hour.push(hourly.FCTTIME.hour);
+  });
+  return hour;
 }
 
-function generateDataSet(labels, data) {
-  // Your code goes here
+function generateDataSet(labels, inputData) {
+  return {
+    'labels': labels,
+    'datasets': [{
+      label: "Hourly Weather for New York",
+      fillColor: "rgba(220,220,220,0.2)",
+      strokeColor: "rgba(220,220,220,1)",
+      pointColor: "rgba(220,220,220,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(220,220,220,1)",
+      data: inputData
+    }]
+  };
 }
 
 function makeAjaxRequest(endpoint, success) {
-  // Your code goes here
+  $.ajax({
+    url: endpoint,
+    dataType: 'jsonp',
+    success: success
+  });
 }
