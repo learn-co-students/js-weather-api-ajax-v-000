@@ -1,15 +1,38 @@
 function getFarenheits(result){
-  // Your code goes here
+  return $.map(result.hourly_forecast, function(hourcast, index){
+    return hourcast.temp.english;
+  });
 }
 
 function getHours(result){
-  // Your code goes here
+  return $.map(result.hourly_forecast, function(hourcast, index){
+    return hourcast.FCTTIME.hour;
+  });
 }
 
 function generateDataSet(labels, data) {
-  // Your code goes here
+
+  var dataParams = {};
+
+  dataParams.labels = labels;
+  dataParams.datasets = [{
+    label: 'Hourly Weather for Merida, Mexico',
+    fillColor: 'rgba(220,220,220,0.2)',
+    strokeColor: 'rgba(220,220,220,1)',
+    pointColor: 'rgba(220,220,220,1)',
+    pointStrokeColor: '#fff',
+    pointHighlightFill: '#fff',
+    pointHighlightStroke: 'rgba(220,220,220,1)',
+    data: data
+  }];
+
+  return dataParams;
 }
 
 function makeAjaxRequest(endpoint, success) {
-  // Your code goes here
+  $.ajax({
+    url: endpoint,
+    dataType: 'jsonp',
+    success: success
+  })
 }
