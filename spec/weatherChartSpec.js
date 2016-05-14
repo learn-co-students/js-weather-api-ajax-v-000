@@ -21,7 +21,7 @@ describe("WeatherChart", function(){
       labels: ["label1", "label2"],
       datasets: [
       {
-        label: "Hourly Weather for New York",
+        label: "Hourly Weather for Merida, Mexico",
         fillColor: "rgba(220,220,220,0.2)",
         strokeColor: "rgba(220,220,220,1)",
         pointColor: "rgba(220,220,220,1)",
