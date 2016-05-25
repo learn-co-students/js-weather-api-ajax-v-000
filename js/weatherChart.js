@@ -1,3 +1,5 @@
+//Yay Done!
+
 //Step 7: parse the temp from JSON and put in array
 function getFarenheits(result){
   // Your code goes here
