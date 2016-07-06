@@ -3,14 +3,14 @@ var dummyData = {"response":{"version":"0.1","termsofService":"http://www.wunder
 describe("WeatherChart", function(){
   // The array we want to get all of our info from is located in `dummyData.hourly_forecast`
   it("returns a list of farenheits", function(){
-    // Each Item has a property of temp. 
+    // Each Item has a property of temp.
     // The farenheit is stored in temp's english property
     // Return a new array of just these values
     expect(getFarenheits(dummyData)).toEqual(['59','58','57','57','56']);
   });
 
   it("returns a list of hours", function(){
-    // Each Item has a property of FCTTIME. 
+    // Each Item has a property of FCTTIME.
     // The hour is stored in FCTTIME's hour property
     // Return a new array of just these values
     expect(getHours(dummyData)).toEqual(['18','19','20','21','22']);
@@ -43,6 +43,7 @@ describe("WeatherChart", function(){
       onSuccess = jasmine.createSpy('onSuccess');
 
       makeAjaxRequest("http://example.com", onSuccess)
+      debugger;
       expect($.ajax).toHaveBeenCalledWith({url: 'http://example.com', dataType: 'jsonp', success: onSuccess})
     })
   })
