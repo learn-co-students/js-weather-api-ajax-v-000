@@ -42,6 +42,7 @@ function makeAjaxRequest(endpoint, success) {
 }
 
 function makeChart(data){
+  debugger;
   var degrees = getFahrenheits(data);
   var time = getHours(data);
   var data = generateDataSet(time, degrees);
