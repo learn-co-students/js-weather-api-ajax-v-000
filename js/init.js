@@ -1,5 +1,5 @@
-jQuery(document).ready(function($) {
-  var API_KEY = "GO GET AN API KEY";
+$(document).ready(function($) {
+  var API_KEY = "1c8d6b68aaf955fe";
   var URL = "http://api.wunderground.com/api/" + API_KEY + "/hourly/q/NY/New_York.json";
   var ctx = $("#NYCWeatherChart").get(0).getContext("2d");
 
