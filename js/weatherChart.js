@@ -35,8 +35,7 @@ function generateDataSet(labels, data) {
 function makeAjaxRequest(endpoint, success) {
   $.ajax({
     url: endpoint,
-    type: 'get',
-    dataType: 'json',
+    dataType: 'jsonp',
     success: success
   })
 }
