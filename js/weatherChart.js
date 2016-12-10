@@ -1,15 +1,16 @@
 function getFahrenheits(result){
-  // Your code goes here
+  return Fahrenheit.slice(0, 100);
+  // returns a list of Fahrenheit temperatures
 }
 
 function getHours(result){
-  // Your code goes here
+  // returns a list of hours
 }
 
 function generateDataSet(labels, data) {
-  // Your code goes here
+  // generates the right dataset for chart.js
 }
 
 function makeAjaxRequest(endpoint, success) {
-  // Your code goes here
+  // ajax request works
 }
