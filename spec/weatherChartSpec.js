@@ -10,7 +10,7 @@ describe("WeatherChart", function(){
   });
 
   it("returns a list of hours", function(){
-    // Each Item has a property of FCTTIME. 
+    // Each Item has a property of FCTTIME.
     // The hour is stored in FCTTIME's hour property
     // Return a new array of just these values
     expect(getHours(dummyData)).toEqual(['18','19','20','21','22']);
