@@ -6,11 +6,11 @@ describe("WeatherChart", function(){
     // Each Item has a property of temp.
     // The Fahrenheit temperature is stored in temp's english property
     // Return a new array of just these values
-    expect(getFahrenheits(dummyData)).toEqual(['59','58','57','57','56']);
+    expect(getFarenheits(dummyData)).toEqual(['59','58','57','57','56']);
   });
 
   it("returns a list of hours", function(){
-    // Each Item has a property of FCTTIME. 
+    // Each Item has a property of FCTTIME.
     // The hour is stored in FCTTIME's hour property
     // Return a new array of just these values
     expect(getHours(dummyData)).toEqual(['18','19','20','21','22']);
