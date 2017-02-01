@@ -12,4 +12,12 @@ function generateDataSet(labels, data) {
 
 function makeAjaxRequest(endpoint, success) {
   // Your code goes here
+  $.ajax({
+    url: endpoint,
+    datatype: 'jsonp',
+    success: function(success){
+      console.log(success);
+    }
+  });
 }
+
